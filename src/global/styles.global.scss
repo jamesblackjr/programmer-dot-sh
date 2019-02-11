@@ -1,0 +1,109 @@
+/* Regular @import url statements work as you'd expect them to -- alternatively
+you can import locally, and they wind up in the resulting bundle */
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono|Roboto");
+
+html {
+  padding: 0;
+  border: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  body {
+    background-color: #30373e;
+    color: white;
+    height: 100%;
+    width: 100%;
+  }
+
+  h1 {
+    font-family: "Fira Mono", monospace;
+    font-size: 3rem;
+  }
+
+  li {
+    font-size: 2rem;
+  }
+
+  #shell-input {
+    background: none;
+    border: none;
+    color: white;
+    font-family: "Fira Mono", monospace;
+    font-size: 3rem;
+    left: -1000px;
+    position: absolute;
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: white;
+      opacity: 1; /* Firefox */
+    }
+    
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: white;
+    }
+    
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: white;
+    }
+  }
+
+  #shell-output {
+    display: inline;
+
+    .cursor {
+      -webkit-animation: 1s blink step-end infinite;
+      -moz-animation: 1s blink step-end infinite;
+      -ms-animation: 1s blink step-end infinite;
+      -o-animation: 1s blink step-end infinite;
+      animation: 1s blink step-end infinite;
+    }
+  }
+  
+  @keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  
+  @-moz-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  
+  @-webkit-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  
+  @-ms-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  
+  @-o-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+}
