@@ -16,6 +16,9 @@ import * as Koa from "koa";
 // Static file handler
 import * as koaSend from "koa-send";
 
+// Favicon file handler
+import * as koaFavicon from "koa-favicon";
+
 // Enable cross-origin requests
 import * as koaCors from "kcors";
 
@@ -161,10 +164,12 @@ export const app = new Koa()
 // In production, check <dist>/public first
 if (common.isProduction) {
   app.use(staticMiddleware(path.resolve(common.dist, "public")));
+  app.use(koaFavicon(path.resolve(common.dist, "public", "assets", "icons", "favicon.ico")));
 }
 
 // ... and then fall-back to <root>/public
 app.use(staticMiddleware(path.resolve(common.dist, "..", "public"), false));
+app.use(koaFavicon(path.resolve(common.dist, "..", "public", "assets", "icons", "favicon.ico")));
 
 // Router
 app.use(router.allowedMethods()).use(router.routes());

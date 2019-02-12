@@ -25,5 +25,9 @@ WORKDIR /app
 # copy source + compiled `node_modules` 
 COPY --from=builder /build .
 
+# set the production port to run
+EXPOSE 8080
+ENV PORT 8080
+
 # by default, run in production mode
 CMD npm run production
