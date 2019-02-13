@@ -11,7 +11,7 @@ import * as React from "react";
 export default class ShellLabel extends React.Component {
   public render() {
     return (
-      <label>&lt;programmer&gt;</label>
+      <label htmlFor="shell-input">&lt;programmer&gt;</label>
     );
   }
 }
