@@ -113,5 +113,8 @@
     "subscriptions-transport-ws": "^0.9.15",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.4"
+  },
+  "resolutions": {
+    "react": "^16.7.0"
   }
 }

@@ -55,7 +55,7 @@ function staticMiddleware(root: string, immutable = true): Koa.Middleware {
   };
 }
 
-// Distributio path
+// Distribution path
 const dist = path.resolve(__dirname, "..", "..", "dist");
 
 export const common = {
