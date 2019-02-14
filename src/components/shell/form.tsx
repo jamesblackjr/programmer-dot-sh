@@ -41,7 +41,7 @@ export default class ShellForm extends React.Component<{}, IShellFormState> {
   public render() {
     return (
       <div id="programmer-shell">
-        <form id="shell-form" className="form" onSubmit={this.handleSubmit}>
+        <form id="shell-form" className="shell-form" onSubmit={this.handleSubmit}>
           <h1>
             <ShellLabel />.<ShellInput keyDownEvent={this.keyDownEvent} keyPressedEvent={this.keyPressedEvent} /><ShellOutput content={this.content} />
           </h1>

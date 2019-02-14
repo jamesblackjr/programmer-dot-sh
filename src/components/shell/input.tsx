@@ -30,7 +30,7 @@ export default class ShellInput extends React.Component<IShellInputProps> {
 
   public render() {
     return (
-      <input id="shell-input" className="input" type="text" autoComplete="off" placeholder="_" tabIndex={0} onKeyDown={this.props.keyDownEvent} onKeyUp={this.props.keyPressedEvent} onKeyPress={this.props.keyPressedEvent} />
+      <input id="shell-input" className="shell-input" type="text" autoComplete="off" placeholder="_" tabIndex={0} onKeyDown={this.props.keyDownEvent} onKeyUp={this.props.keyPressedEvent} onKeyPress={this.props.keyPressedEvent} />
     );
   }
 }

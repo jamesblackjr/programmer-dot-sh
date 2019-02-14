@@ -9,6 +9,9 @@ import { Helmet } from "react-helmet";
 /* Local */
 import ShellForm from "./form";
 
+/* SCSS */
+import "./styles.scss";
+
 // ----------------------------------------------------------------------------
 
 class Index extends React.PureComponent {

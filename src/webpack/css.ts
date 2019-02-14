@@ -32,7 +32,7 @@ export interface IRule {
 // Returns string RegEx and modules settings based on style file extension
 function getExtensionSettings(ext: string): ModuleSettings[] {
   return [
-    [`^(?!.*\\.global\\.${ext}$).*\\.${ext}$`, { modules: true }],
+    [`^(?!.*\\.global\\.${ext}$).*\\.${ext}$`, { modules: false }],
     [`\\.global\\.${ext}$`, { modules: false }]
   ];
 }

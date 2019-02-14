@@ -1,0 +1,29 @@
+@import "@/global/mixins.global.scss";
+@import "@/global/variables.global.scss";
+
+.shell-form {
+  h1 {
+    font-family: $monospaced-font-family;
+    font-size: 3rem;
+  }
+}
+
+.shell-input {
+  background: none;
+  border: none;
+  color: $default-font-color;
+  font-family: $monospaced-font-family;
+  font-size: 3rem;
+  left: -1000px;
+  position: absolute;
+
+  @include placeholder(white);
+}
+
+.shell-output {
+  display: inline;
+  
+  .cursor {
+    @include blink(white);
+  }
+}
