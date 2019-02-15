@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: lifealicious/programmer-dot-sh:latest
+        auth:
+          username: lifealicious
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run: echo "A first hello"
