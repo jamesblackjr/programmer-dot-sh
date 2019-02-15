@@ -1,7 +1,7 @@
 {
-  "*.{js,jsx,json}": ["prettier --write", "eslint --fix", "git add"],
-  "*.{ts,tsx}": ["prettier --write", "tslint --fix", "git add"],
-  "*.{css,less,scss}": ["prettier --write", "stylelint --fix", "git add"],
+  "*.{js,jsx,json}": ["prettier --write", "eslint", "git add"],
+  "*.{ts,tsx}": ["prettier --write", "tslint", "git add"],
+  "*.{css,less,scss}": ["prettier --write", "stylelint", "git add"],
   "*.{html}": ["prettier --write", "htmllint", "git add"],
   "*.{graphql}": ["prettier --write", "gqlint", "git add"],
   "*.{md}": ["prettier --write", "markdownlint", "git add"],
