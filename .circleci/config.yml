@@ -1,0 +1,8 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: lifealicious/programmer-dot-sh:latest
+    steps:
+      - checkout
+      - run: echo "A first hello"

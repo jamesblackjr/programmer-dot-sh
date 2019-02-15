@@ -1,0 +1,54 @@
+version: '3'
+
+services:
+  programmer-dot-sh:
+    image: lifealicious/programmer-dot-sh:latest
+    container_name: programmer-dot-sh
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  webserver:
+    image: nginx:mainline-alpine
+    container_name: webserver
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - web-root:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - dhparam:/etc/ssl/certs
+    depends_on:
+      - programmer-dot-sh
+    networks:
+      - app-network
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - web-root:/var/www/html
+    depends_on:
+      - webserver
+    command: certonly --webroot --webroot-path=/var/www/html --email mrdesigner@jamesblackjr.com --agree-tos --no-eff-email --force-renewal -d programmer.sh  -d www.programmer.sh
+
+volumes:
+  certbot-etc:
+  certbot-var:
+  dhparam:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/circleci/dhparam/
+      o: bind
+  web-root:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
