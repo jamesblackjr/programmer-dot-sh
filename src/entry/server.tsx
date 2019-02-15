@@ -3,7 +3,7 @@
 // ----------------------------------------------------------------------------
 // IMPORTS
 
-/* NPM */
+/* Yarn */
 
 // Implement a global `fetch()` polyfill, for Apollo requests
 import "cross-fetch/polyfill";

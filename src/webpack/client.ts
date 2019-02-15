@@ -6,7 +6,7 @@
 /* Node */
 import * as path from "path";
 
-/* NPM */
+/* Yarn */
 import BrotliCompression = require("brotli-webpack-plugin");
 import * as CompressionPlugin from "compression-webpack-plugin";
 import { mergeWith } from "lodash";

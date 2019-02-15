@@ -7,7 +7,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-/* NPM */
+/* Yarn */
 
 // Koa 2 web server.  Handles incoming HTTP requests, and will serve back
 // the React render, or any of the static assets being compiled

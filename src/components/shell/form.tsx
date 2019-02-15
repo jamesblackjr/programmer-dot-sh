@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // IMPORTS
 
-/* NPM */
+/* Yarn */
 import * as React from "react";
 import { observable } from "mobx";
 import { observer } from "mobx-react";
@@ -24,7 +24,7 @@ export default class ShellForm extends React.Component<{}, IShellFormState> {
 
   public handleSubmit = (event: any) => {
     event.preventDefault();
-    
+
     const url = `https://stackoverflow.com/search?q=${this.content}`;
 
     window.location.href = url;
@@ -45,7 +45,7 @@ export default class ShellForm extends React.Component<{}, IShellFormState> {
           <h1>
             <ShellLabel />.<ShellInput keyDownEvent={this.keyDownEvent} keyPressedEvent={this.keyPressedEvent} /><ShellOutput content={this.content} />
           </h1>
-        </form>      
+        </form>
       </div>
     );
   }

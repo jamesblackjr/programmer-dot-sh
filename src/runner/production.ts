@@ -6,7 +6,7 @@
 /* Node */
 import * as fs from "fs";
 
-/* NPM */
+/* Yarn */
 import * as chalk from "chalk";
 
 /* Local */

@@ -6,7 +6,7 @@
 /* Node */
 import * as path from "path";
 
-/* NPM */
+/* Yarn */
 import { mergeWith } from "lodash";
 import * as webpack from "webpack";
 import * as nodeModules from "webpack-node-externals";

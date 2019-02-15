@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // IMPORTS
 
-/* NPM */
+/* Yarn */
 import * as React from "react";
 
 /* Local */
@@ -18,11 +18,11 @@ export default class ShellInput extends React.Component<IShellInputProps> {
     document.body.addEventListener("click", this.focusInput);
 
     this.focusInput();
-  };
+  }
 
   public focusInput = () => {
     const input = document.getElementById("shell-input");
-    
+
     if (input) {
       input.focus();
     }

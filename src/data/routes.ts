@@ -3,7 +3,7 @@
 // ----------------------------------------------------------------------------
 // IMPORTS
 
-/* NPM */
+/* Yarn */
 
 // We're using `react-router-dom` to handle routing, so grab the `RouteProps`
 // type that we'll use to ensure our own types conform to the expected configuration

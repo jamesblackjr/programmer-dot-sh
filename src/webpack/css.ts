@@ -3,7 +3,7 @@
 // ----------------------------------------------------------------------------
 // IMPORTS
 
-/* NPM */
+/* Yarn */
 import * as MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { Loader } from "webpack";
 

@@ -5,7 +5,7 @@
 // ----------------------------------------------------------------------------
 // IMPORTS
 
-/* NPM */
+/* Yarn */
 import * as React from "react";
 import { HelmetData } from "react-helmet";
 

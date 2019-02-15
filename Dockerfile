@@ -1,28 +1,25 @@
 FROM node:11.8.0-alpine AS builder
 
-# log most things
-ENV NPM_CONFIG_LOGLEVEL notice
-
 # OS packages for compilation
 RUN apk add --no-cache python2 make g++
 
-# install NPM packages
+# install Yarn packages
 WORKDIR /build
-ADD package*.json ./
-RUN npm i
+COPY package.json yarn.lock ./
+RUN yarn --pure-lockfile
 
 # add source
 ADD . .
 
 # build
-RUN npm run build
+RUN yarn build
 
 ########################
 
 FROM node:11.8.0-alpine
 WORKDIR /app
 
-# copy source + compiled `node_modules` 
+# copy source + compiled `node_modules`
 COPY --from=builder /build .
 
 # set the production port to run
@@ -30,4 +27,4 @@ EXPOSE 8080
 ENV PORT 8080
 
 # by default, run in production mode
-CMD npm run production
+CMD yarn production

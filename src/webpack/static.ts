@@ -3,7 +3,7 @@
 // ----------------------------------------------------------------------------
 // IMPORTS
 
-/* NPM */
+/* Yarn */
 
 import { mergeWith } from "lodash";
 import * as webpack from "webpack";

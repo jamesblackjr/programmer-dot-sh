@@ -6,7 +6,7 @@
 /* Node */
 import * as path from "path";
 
-/* NPM */
+/* Yarn */
 import * as lodash from "lodash";
 import * as webpack from "webpack";
 

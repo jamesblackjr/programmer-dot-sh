@@ -34,7 +34,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-/* NPM */
+/* Yarn */
 import * as Koa from "koa";
 import * as requireFromString from "require-from-string";
 import * as sourceMapSupport from "source-map-support";
@@ -66,7 +66,7 @@ const createKoaHandler: KoaHandler = (error, serverRenderer) => (ctx, next) => {
 };
 
 function isMultiCompiler(compiler?: webpack.MultiCompiler) {
-  // Duck typing as `instanceof MultiCompiler` fails when npm decides to
+  // Duck typing as `instanceof MultiCompiler` fails when npm/yarn decides to
   // install multiple instances of webpack.
   return compiler && compiler.compilers;
 }

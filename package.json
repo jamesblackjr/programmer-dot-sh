@@ -5,11 +5,11 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production ts-node index.ts",
     "clean": "rimraf dist",
-    "clean-production": "npm run clean && npm run production",
+    "clean-production": "yarn clean && yarn production",
     "dev": "cross-env ts-node index.ts",
     "docker-build": "docker build -f Dockerfile -t lifealicious/programmer-dot-sh:latest .",
     "docker-push": "docker push lifealicious/programmer-dot-sh:latest",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "yarn build",
     "lint": "tslint --project .",
     "production": "cross-env NODE_ENV=production ts-node index.ts",
     "static": "cross-env NODE_ENV=production ts-node index.ts",

@@ -3,7 +3,7 @@
 // ----------------------------------------------------------------------------
 // IMPORTS
 
-/* NPM */
+/* Yarn */
 import * as chalk from "chalk";
 import * as KoaWebpack from "koa-webpack";
 
