@@ -6,33 +6,29 @@
 // IMPORTS
 
 /* Yarn */
-import * as React from "react";
-import { HelmetData } from "react-helmet";
+import * as React from 'react'
+import { HelmetData } from 'react-helmet'
 
 // ----------------------------------------------------------------------------
 
 // Types
 
 export interface IHtmlProps {
-  css?: string;
-  helmet: HelmetData;
-  html: string;
-  scripts: string[];
-  styles?: Array<React.ReactElement<{}>>;
+  css?: string
+  helmet: HelmetData
+  html: string
+  scripts: string[]
+  styles?: Array<React.ReactElement<{}>>
   window?: {
-    [key: string]: object;
-  };
+    [key: string]: object
+  }
 }
 
 export default class Html extends React.PureComponent<IHtmlProps> {
   public render() {
-    const { css, helmet, html, scripts, styles, window = {} } = this.props;
+    const { css, helmet, html, scripts, styles, window = {} } = this.props
     return (
-      <html
-        lang="en"
-        prefix="og: http://ogp.me/ns#"
-        {...helmet.htmlAttributes.toString()}
-      >
+      <html lang="en" prefix="og: http://ogp.me/ns#" {...helmet.htmlAttributes.toString()}>
         <head>
           {helmet.title.toComponent()}
           <meta charSet="utf-8" />
@@ -52,10 +48,9 @@ export default class Html extends React.PureComponent<IHtmlProps> {
           <script
             dangerouslySetInnerHTML={{
               __html: Object.keys(window).reduce(
-                (out, key) =>
-                  (out += `window.${key}=${JSON.stringify(window[key])};`),
-                ""
-              )
+                (out, key) => (out += `window.${key}=${JSON.stringify(window[key])};`),
+                ''
+              ),
             }}
           />
         </body>
@@ -63,6 +58,6 @@ export default class Html extends React.PureComponent<IHtmlProps> {
           <script key={script} src={script} />
         ))}
       </html>
-    );
+    )
   }
 }

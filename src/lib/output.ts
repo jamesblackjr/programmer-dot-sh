@@ -8,18 +8,18 @@
 // IMPORTS
 
 /* Local */
-import Stats from "./stats";
+import Stats from './stats'
 
 // ----------------------------------------------------------------------------
 
 // Types
 export interface IOutput {
-  client: Stats;
-  server: Stats;
+  client: Stats
+  server: Stats
 }
 
 // Config cache
-const config = new WeakMap<Output, IOutput>();
+const config = new WeakMap<Output, IOutput>()
 
 export default class Output {
   // --------------------------------------------------------------------------
@@ -28,18 +28,18 @@ export default class Output {
 
   /* CONSTRUCTOR */
   public constructor(c: IOutput) {
-    config.set(this, c);
+    config.set(this, c)
   }
 
   /* GETTERS */
 
   // Return the Webpack client build stats
   public get client() {
-    return config.get(this)!.client;
+    return config.get(this)!.client
   }
 
   // Return the Webpack server build stats
   public get server() {
-    return config.get(this)!.server;
+    return config.get(this)!.server
   }
 }

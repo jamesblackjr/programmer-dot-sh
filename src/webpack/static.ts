@@ -5,19 +5,19 @@
 
 /* Yarn */
 
-import { mergeWith } from "lodash";
-import * as webpack from "webpack";
+import { mergeWith } from 'lodash'
+import * as webpack from 'webpack'
 
 // Plugin for generating `index.html` file for static hosting
-import * as HtmlWebpackPlugin from "html-webpack-plugin";
+import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 
 /* Local */
 
 // Common config
-import { defaultMerger } from "./common";
+import { defaultMerger } from './common'
 
 // Get the client-side config as a base to extend
-import client from "./client";
+import client from './client'
 
 // ----------------------------------------------------------------------------
 
@@ -26,10 +26,10 @@ const base: webpack.Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: false,
-      template: "src/views/static.html",
-      title: "<programmer>._"
-    })
-  ]
-};
+      template: 'src/views/static.html',
+      title: '<programmer>._',
+    }),
+  ],
+}
 
-export default mergeWith({}, client, base, defaultMerger);
+export default mergeWith({}, client, base, defaultMerger)

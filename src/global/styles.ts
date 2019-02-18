@@ -17,18 +17,18 @@
 // IMPORTS
 
 /* Yarn */
-import { css } from "@emotion/core";
+import { css } from '@emotion/core'
 
 /* Local */
 
 // Import global SASS styles that you want to be rendered into the
 // resulting `main.css` file included with the initial render. If you don't
 // want a CSS file to be generated, you can comment out this line
-import "./styles.global.scss";
+import './styles.global.scss'
 
 // ----------------------------------------------------------------------------
 
 // Global styles to apply
 export default css`
   /* nothing to see here, move along. */
-`;
+`

@@ -3,14 +3,14 @@
 
 /* Yarn */
 
-import * as React from "react";
-import { Helmet } from "react-helmet";
+import * as React from 'react'
+import { Helmet } from 'react-helmet'
 
 /* Local */
-import ShellForm from "./form";
+import ShellForm from './form'
 
 /* SCSS */
-import "./styles.scss";
+import './styles.scss'
 
 // ----------------------------------------------------------------------------
 
@@ -19,13 +19,13 @@ class Index extends React.PureComponent {
     return (
       <>
         <Helmet>
-            <title>&lt;programmer&gt;._</title>
-            <meta name="description" content="nothing to see here, move along." />
+          <title>&lt;programmer&gt;._</title>
+          <meta name="description" content="nothing to see here, move along." />
         </Helmet>
         <ShellForm />
       </>
-    );
+    )
   }
 }
 
-export default Index;
+export default Index

@@ -4,16 +4,16 @@
 // IMPORTS
 
 /* Yarn */
-import * as chalk from "chalk";
+import * as chalk from 'chalk'
 
 /* Local */
-import { build, common } from "./app";
+import { build, common } from './app'
 
 // ----------------------------------------------------------------------------
 
-common.spinner.info(chalk.default.bgBlue("Static mode"));
+common.spinner.info(chalk.default.bgBlue('Static mode'))
 
 void (async () => {
-  await build(true /* build in static mode */);
-  common.spinner.succeed("Finished building");
-})();
+  await build(true /* build in static mode */)
+  common.spinner.succeed('Finished building')
+})()

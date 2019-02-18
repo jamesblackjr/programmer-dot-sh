@@ -4,14 +4,14 @@
 // IMPORTS
 
 /* Yarn */
-import { InMemoryCache, NormalizedCacheObject } from "apollo-cache-inmemory";
-import { ApolloClient } from "apollo-client";
-import { ApolloLink, split } from "apollo-link";
-import { onError } from "apollo-link-error";
-import { HttpLink } from "apollo-link-http";
-import { WebSocketLink } from "apollo-link-ws";
-import { getMainDefinition } from "apollo-utilities";
-import { SubscriptionClient } from "subscriptions-transport-ws";
+import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory'
+import { ApolloClient } from 'apollo-client'
+import { ApolloLink, split } from 'apollo-link'
+import { onError } from 'apollo-link-error'
+import { HttpLink } from 'apollo-link-http'
+import { WebSocketLink } from 'apollo-link-ws'
+import { getMainDefinition } from 'apollo-utilities'
+import { SubscriptionClient } from 'subscriptions-transport-ws'
 
 // ----------------------------------------------------------------------------
 
@@ -21,20 +21,20 @@ export function createClient(): ApolloClient<NormalizedCacheObject> {
   // universally, the cache will survive until the HTTP request is
   // responded to (on the server) or for the whole of the user's visit (in
   // the browser)
-  const cache = new InMemoryCache();
+  const cache = new InMemoryCache()
 
   // Create a HTTP client (both server/client). It takes the GraphQL
   // server from the `GRAPHQL` environment variable, which by default is
   // set to an external playground at https://graphqlhub.com/graphql
   const httpLink = new HttpLink({
-    credentials: "same-origin",
-    uri: GRAPHQL
-  });
+    credentials: 'same-origin',
+    uri: GRAPHQL,
+  })
 
   // If we're in the browser, we'd have received initial state from the
   // server. Restore it, so the client app can continue with the same data.
   if (!SERVER) {
-    cache.restore((window as any).__APOLLO_STATE__);
+    cache.restore((window as any).__APOLLO_STATE__)
   }
 
   // Return a new Apollo Client back, with the cache we've just created,
@@ -51,13 +51,11 @@ export function createClient(): ApolloClient<NormalizedCacheObject> {
       onError(({ graphQLErrors, networkError }) => {
         if (graphQLErrors) {
           graphQLErrors.map(({ message, locations, path }) =>
-            console.log(
-              `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
-            )
-          );
+            console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`)
+          )
         }
         if (networkError) {
-          console.log(`[Network error]: ${networkError}`);
+          console.log(`[Network error]: ${networkError}`)
         }
       }),
 
@@ -65,25 +63,22 @@ export function createClient(): ApolloClient<NormalizedCacheObject> {
       WS_SUBSCRIPTIONS && !SERVER
         ? split(
             ({ query }) => {
-              const definition = getMainDefinition(query);
-              return (
-                definition.kind === "OperationDefinition" &&
-                definition.operation === "subscription"
-              );
+              const definition = getMainDefinition(query)
+              return definition.kind === 'OperationDefinition' && definition.operation === 'subscription'
             },
             // Use WebSockets for subscriptions
             new WebSocketLink(
               // Replace http(s) with `ws` for connecting via WebSockts
-              new SubscriptionClient(GRAPHQL.replace(/^https?/, "ws"), {
-                reconnect: true // <-- automatically redirect as needed
+              new SubscriptionClient(GRAPHQL.replace(/^https?/, 'ws'), {
+                reconnect: true, // <-- automatically redirect as needed
               })
             ),
             // ... fall-back to HTTP for everything else
             httpLink
           )
-        : httpLink // <-- just use HTTP on the server
+        : httpLink, // <-- just use HTTP on the server
     ]),
     // On the server, enable SSR mode
-    ssrMode: SERVER
-  });
+    ssrMode: SERVER,
+  })
 }

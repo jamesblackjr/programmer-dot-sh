@@ -4,24 +4,24 @@
 // IMPORTS
 
 /* Node */
-import * as path from "path";
+import * as path from 'path'
 
 /* Yarn */
-import { mergeWith } from "lodash";
-import * as webpack from "webpack";
-import * as nodeModules from "webpack-node-externals";
+import { mergeWith } from 'lodash'
+import * as webpack from 'webpack'
+import * as nodeModules from 'webpack-node-externals'
 
 /* Local */
-import common, { defaultMerger, files } from "./common";
-import css from "./css";
+import common, { defaultMerger, files } from './common'
+import css from './css'
 
 // ----------------------------------------------------------------------------
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env.NODE_ENV === 'production'
 
 // Base server config
 const base: webpack.Configuration = {
-  entry: [path.resolve(__dirname, "..", "entry", "server.tsx")],
+  entry: [path.resolve(__dirname, '..', 'entry', 'server.tsx')],
 
   // External modules that we avoid transpiling
   externals: nodeModules(),
@@ -34,13 +34,13 @@ const base: webpack.Configuration = {
         test: files.images,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             query: {
               emitFile: false,
-              name: `assets/img/[name]${isProduction ? ".[hash]" : ""}.[ext]`
-            }
-          }
-        ]
+              name: `assets/img/[name]${isProduction ? '.[hash]' : ''}.[ext]`,
+            },
+          },
+        ],
       },
 
       // Fonts
@@ -48,73 +48,67 @@ const base: webpack.Configuration = {
         test: files.fonts,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             query: {
               emitFile: false,
-              name: `assets/fonts/[name]${isProduction ? ".[hash]" : ""}.[ext]`
-            }
-          }
-        ]
-      }
-    ]
+              name: `assets/fonts/[name]${isProduction ? '.[hash]' : ''}.[ext]`,
+            },
+          },
+        ],
+      },
+    ],
   },
 
   // Name
-  name: "server",
+  name: 'server',
 
   // Set output
   output: {
-    filename: "../server.js",
-    libraryTarget: "commonjs2",
-    path: path.resolve(__dirname, "..", "..", "dist", "public"),
-    publicPath: "/"
+    filename: '../server.js',
+    libraryTarget: 'commonjs2',
+    path: path.resolve(__dirname, '..', '..', 'dist', 'public'),
+    publicPath: '/',
   },
 
   // Plugins
   plugins: [
     // Only emit a single `server.js` chunk
     new webpack.optimize.LimitChunkCountPlugin({
-      maxChunks: 1
+      maxChunks: 1,
     }),
 
     // Add source map support to the server-side bundle
     new webpack.BannerPlugin({
-      banner: `require("source-map-support").install();`,
+      banner: 'require("source-map-support").install();',
       entryOnly: false,
-      include: ["server.js"],
-      raw: true
+      include: ['server.js'],
+      raw: true,
     }),
 
     // Add global variables
     new webpack.DefinePlugin({
       GRAPHQL: JSON.stringify(process.env.GRAPHQL),
       SERVER: true,
-      WS_SUBSCRIPTIONS: JSON.stringify(process.env.WS_SUBSCRIPTIONS)
-    })
+      WS_SUBSCRIPTIONS: JSON.stringify(process.env.WS_SUBSCRIPTIONS),
+    }),
   ],
 
   resolve: {
-    modules: [path.resolve(__dirname, "..", "..", "node_modules")]
+    modules: [path.resolve(__dirname, '..', '..', 'node_modules')],
   },
 
   // Target
-  target: "node"
-};
+  target: 'node',
+}
 
 // Development config
 const dev: webpack.Configuration = {
-  devtool: "eval-source-map"
-};
+  devtool: 'eval-source-map',
+}
 
 // Production config
 const prod: webpack.Configuration = {
-  devtool: "source-map"
-};
+  devtool: 'source-map',
+}
 
-export default mergeWith(
-  {},
-  common(true),
-  base,
-  process.env.NODE_ENV === "production" ? prod : dev,
-  defaultMerger
-);
+export default mergeWith({}, common(true), base, process.env.NODE_ENV === 'production' ? prod : dev, defaultMerger)
