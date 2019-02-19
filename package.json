@@ -14,6 +14,7 @@
     "production": "cross-env NODE_ENV=production ts-node index.ts",
     "static": "cross-env NODE_ENV=production ts-node index.ts",
     "start": "cross-env ts-node index.ts",
+    "stylelint": "stylelint src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "James A. Black Jr. <mrdesigner@jamesblackjr.com>",

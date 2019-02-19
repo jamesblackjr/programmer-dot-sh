@@ -14,7 +14,7 @@
       color: $color;
     }
   }
-  
+
   @-moz-keyframes blink {
     from, to {
       color: transparent;
@@ -23,7 +23,7 @@
       color: $color;
     }
   }
-  
+
   @-webkit-keyframes blink {
     from, to {
       color: transparent;
@@ -32,7 +32,7 @@
       color: $color;
     }
   }
-  
+
   @-ms-keyframes blink {
     from, to {
       color: transparent;
@@ -41,7 +41,7 @@
       color: $color;
     }
   }
-  
+
   @-o-keyframes blink {
     from, to {
       color: transparent;
@@ -57,12 +57,12 @@
     color: $color;
     opacity: 1; /* Firefox */
   }
-  
-  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+
+  &::-ms-input-placeholder { /* Microsoft Edge */
     color: $color;
   }
-  
-  &::-ms-input-placeholder { /* Microsoft Edge */
+
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: $color;
   }
 }
