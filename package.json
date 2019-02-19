@@ -140,8 +140,5 @@
     "tslint-config-prettier": "^1.18.0",
     "webpack": "^4.29.0",
     "webpack-node-externals": "^1.7.2"
-  },
-  "resolutions": {
-    "react": "^16.7.0"
   }
 }
