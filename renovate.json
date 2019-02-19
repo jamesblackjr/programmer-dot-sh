@@ -1,5 +1,9 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "packageRules": [{
+    "packageNames": ["react-hot-loader"],
+    "allowedVersions": "<=4.6.5"
+  }]
 }
