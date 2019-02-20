@@ -1,4 +1,4 @@
-FROM node:11.9.0-alpine AS builder
+FROM node:11.10.0-alpine AS builder
 
 # OS packages for compilation
 RUN apk add --no-cache python2 make g++
