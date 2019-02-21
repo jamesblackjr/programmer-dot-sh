@@ -16,7 +16,7 @@ RUN yarn build
 
 ########################
 
-FROM node:11.8.0-alpine
+FROM node:11.10.0-alpine
 WORKDIR /app
 
 # copy source + compiled `node_modules`
