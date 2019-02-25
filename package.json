@@ -65,7 +65,7 @@
     "typescript": "3.3.3333"
   },
   "devDependencies": {
-    "@babel/core": "7.3.3",
+    "@babel/core": "7.3.4",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@types/compression-webpack-plugin": "2.0.0",
     "@types/history": "4.7.2",
