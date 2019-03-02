@@ -100,7 +100,7 @@
     "css-hot-loader": "1.4.3",
     "css-loader": "2.1.0",
     "cssnano": "4.1.10",
-    "eslint": "5.14.1",
+    "eslint": "5.15.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "4.1.0",
     "eslint-config-react-app": "3.0.7",
