@@ -1,9 +1,9 @@
 {
-  "*.{js,jsx,json}": ["prettier --list-different", "eslint", "git add"],
-  "*.{ts,tsx}": ["prettier --list-different", "tslint", "git add"],
-  "*.{css,less,scss}": ["prettier --list-different", "stylelint", "git add"],
-  "*.{html}": ["prettier --list-different", "htmllint", "git add"],
-  "*.{graphql}": ["prettier --list-different", "gqlint", "git add"],
-  "*.{md}": ["prettier --list-different", "markdownlint", "git add"],
-  "*.{hbs,toml,xml,yml,yaml}": ["prettier --list-different", "git add"]
+  "*.{js,jsx,json}": ["prettier --write", "eslint", "git add"],
+  "*.{ts,tsx}": ["prettier --write", "tslint", "git add"],
+  "*.{css,less,scss}": ["prettier --write", "stylelint", "git add"],
+  "*.{html}": ["prettier --write", "htmllint", "git add"],
+  "*.{graphql}": ["prettier --write", "gqlint", "git add"],
+  "*.{md}": ["prettier --write", "markdownlint", "git add"],
+  "*.{hbs,toml,xml,yml,yaml}": ["prettier --write", "git add"]
 }
