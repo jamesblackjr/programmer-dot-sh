@@ -1,9 +1,13 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "packageRules": [{
-    "packageNames": ["react-hot-loader"],
-    "allowedVersions": "<=4.6.5"
-  }]
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "packageNames": ["react-hot-loader"],
+      "allowedVersions": "<=4.6.5"
+    },
+    {
+      "packageNames": ["ora"],
+      "allowedVersions": "<=3.1.0"
+    }
+  ]
 }
