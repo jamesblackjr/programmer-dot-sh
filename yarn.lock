@@ -5765,10 +5765,10 @@ koa-send@5.0.0:
     mz "^2.7.0"
     resolve-path "^1.4.0"
 
-koa-webpack@5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/koa-webpack/-/koa-webpack-5.2.1.tgz#2594acdb37c6a76874abf153b26f453083472138"
-  integrity sha512-Sh/UppbFmxpEXi/A5TfwR4aXdbZH0jzhBHBv7gc9FIw9q/tBN6R6p4q+c/RUYFbCjpyS2EKR26ODgJnjDeX9wg==
+koa-webpack@5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/koa-webpack/-/koa-webpack-5.2.2.tgz#e2b958038eec728c20f52437366bdde05169050c"
+  integrity sha512-4DHir+7XcOLnhPg3UCRYzljqTh2ri5XcjV2+Cjo4BrsM/CxSlMZ7rj5KaGoWxmm5rYlyA8+L190diKgCXCAj7Q==
   dependencies:
     app-root-path "^2.0.1"
     chalk "^2.4.2"
