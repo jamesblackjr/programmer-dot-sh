@@ -76,7 +76,7 @@
     "@types/koa-router": "7.0.40",
     "@types/koa-send": "4.1.1",
     "@types/koa-webpack": "5.0.1",
-    "@types/lodash": "4.14.121",
+    "@types/lodash": "4.14.123",
     "@types/mini-css-extract-plugin": "0.2.0",
     "@types/node": "10.12.29",
     "@types/ora": "3.1.0",
