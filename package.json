@@ -24,8 +24,8 @@
     "url": "git+https://github.com/jamesblackjr/programmer-dot-sh.git"
   },
   "dependencies": {
-    "@emotion/core": "10.0.7",
-    "@emotion/styled": "10.0.7",
+    "@emotion/core": "10.0.9",
+    "@emotion/styled": "10.0.9",
     "apollo-cache-inmemory": "1.5.1",
     "apollo-client": "2.5.1",
     "apollo-link": "1.2.11",
@@ -38,7 +38,7 @@
     "cross-env": "5.2.0",
     "cross-fetch": "3.0.1",
     "dotenv": "6.2.0",
-    "emotion": "10.0.7",
+    "emotion": "10.0.9",
     "graphql": "14.1.1",
     "graphql-tag": "2.10.1",
     "history": "4.7.2",
@@ -94,7 +94,7 @@
     "babel-core": "6.26.3",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
-    "babel-plugin-emotion": "10.0.7",
+    "babel-plugin-emotion": "10.0.9",
     "brotli-webpack-plugin": "1.1.0",
     "compression-webpack-plugin": "2.0.0",
     "css-hot-loader": "1.4.3",
