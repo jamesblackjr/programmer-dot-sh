@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /programmer-dot-sh
     docker:
-      - image: docker:17.12.1-ce-git
+      - image: docker:18.09.5-ce-git
     steps:
       - checkout
       - setup_remote_docker
