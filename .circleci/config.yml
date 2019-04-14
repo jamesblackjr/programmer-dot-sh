@@ -2,12 +2,15 @@ version: 2
 jobs:
   build:
     working_directory: /programmer-dot-sh
+    docker:
+      - image: docker:16.06.3-ce-git
     steps:
       - checkout
       - setup_remote_docker
       - run:
           name: Install dependencies
           command: |
+            apk add --update py-pip
             pip install docker-compose
       - restore_cache:
           keys:
