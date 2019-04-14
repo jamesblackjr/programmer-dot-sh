@@ -1,7 +1,7 @@
 FROM node:11.12.0-alpine AS builder
 
 # OS packages for compilation
-RUN apk add --no-cache python2 make g++
+RUN apk add --no-cache python2 make gcc g++
 
 # install Yarn packages
 WORKDIR /build
