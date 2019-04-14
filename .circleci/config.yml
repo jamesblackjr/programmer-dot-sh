@@ -2,8 +2,6 @@ version: 2
 jobs:
   build:
     working_directory: /programmer-dot-sh
-    docker:
-      - image: circleci/python:2.7
     steps:
       - checkout
       - setup_remote_docker
