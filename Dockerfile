@@ -1,4 +1,4 @@
-FROM node:11.12.0-alpine AS builder
+FROM node:11.15.0-alpine AS builder
 
 # OS packages for compilation
 RUN apk add --no-cache python2 make g++
@@ -16,7 +16,7 @@ RUN yarn build
 
 ########################
 
-FROM node:11.12.0-alpine
+FROM node:11.15.0-alpine
 WORKDIR /app
 
 # copy source + compiled `node_modules`
